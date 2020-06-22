@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "mPI Lite App Store Code";
+}
+
+<h1>MPI lite</h1>
+
+@if (@Model.code != null)
+{
+    <p>Copy this unique one time use code to redeem the MPIlite app on the AppStore:</p>
+
+    <h3>@Model.code.Code</h3>
+
+    <p>
+        Or click this link on your iPhone:<br/>
+        <a href=@Model.code.URL target="_blank">@Model.code.URL</a>
+    </p>
+
+
+
+    <p><a href="mailto:changeMe@meijer.com?subject=MPI lite download link&body=Click this link on your iPhone: @Model.code.URL">Send email to yourself with this information</a></p>
+
+    <p> <strong>Meijer Team Members:</strong> Meijer employees must only use the mPI Lite app during work hours and adhere to all policies</p>
+    <p><strong>Meijer Vendors:</strong> Vendors will use their login credentials for <a href="https://vendornet.meijer.com/" target="_blank"> VendorNet</a> to access mPI Lite. Please see your account broker for details on how to obtain VendorNet login credentials. Vendors will be limited to access product information only for the products they service</p>
+}
+else
+{
+    <p>No codes available, please contact support.</p>
+}
